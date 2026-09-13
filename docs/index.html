@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Selected quantitative and qualitative results from DefectComposer.">
+  <title>DefectComposer — Results</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="shell">
+      <p class="eyebrow">Research demo · Selected results</p>
+      <h1>DefectComposer</h1>
+      <p class="subtitle">Diverse and realistic defect image generation with consistency for industrial inspection</p>
+      <nav aria-label="Page sections">
+        <a href="#detection">Detection</a>
+        <a href="#classification">Classification</a>
+        <a href="#ablation">Ablation</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="intro" aria-label="Overview">
+      <p>This page presents selected quantitative comparisons and additional generated results from DefectComposer.</p>
+      <div class="summary" aria-label="Result summary">
+        <span><strong>3</strong> quantitative tables</span>
+        <span><strong>2</strong> qualitative datasets</span>
+      </div>
+    </section>
+
+    <section id="detection" class="result-section">
+      <div class="section-label">Detection</div>
+      <div class="table-card">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Image-level defect detection results; scroll horizontally on small screens">
+          <table class="data-table wide-table">
+            <caption><span>Table 1.</span> Comparison of Image-Level Defect Detection Performance (AUC, AP, F1-max).</caption>
+            <thead>
+              <tr>
+                <th rowspan="2" scope="col">Category</th>
+                <th colspan="3" scope="colgroup">DRAEM</th>
+                <th colspan="3" scope="colgroup">PRN</th>
+                <th colspan="3" scope="colgroup">DFMGAN</th>
+                <th colspan="3" scope="colgroup">AnoDiff</th>
+                <th colspan="3" scope="colgroup">DefectDiffu</th>
+                <th colspan="3" scope="colgroup">DualAnoDiff</th>
+                <th colspan="3" scope="colgroup" class="ours-head">Ours</th>
+              </tr>
+              <tr class="metric-row">
+                <th>AUC</th><th>AP</th><th>F1-max</th>
+                <th>AUC</th><th>AP</th><th>F1-max</th>
+                <th>AUC</th><th>AP</th><th>F1-max</th>
+                <th>AUC</th><th>AP</th><th>F1-max</th>
+                <th>AUC</th><th>AP</th><th>F1-max</th>
+                <th>AUC</th><th>AP</th><th>F1-max</th>
+                <th class="ours">AUC</th><th class="ours">AP</th><th class="ours">F1-max</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">MVTec</th><td>94.6</td><td>97.0</td><td>94.4</td><td>91.6</td><td>96.6</td><td>92.4</td><td>87.2</td><td>94.8</td><td>94.7</td><td>99.2</td><td><strong>99.7</strong></td><td><strong>98.7</strong></td><td>99.2</td><td>99.2</td><td>98.4</td><td>98.2</td><td>98.9</td><td>97.1</td><td class="ours"><strong>99.3</strong></td><td class="ours">99.5</td><td class="ours"><strong>98.7</strong></td></tr>
+              <tr><th scope="row">VisA</th><td>86.5</td><td>84.4</td><td>80.2</td><td>88.2</td><td>86.8</td><td>82.3</td><td>86.3</td><td>86.5</td><td>81.4</td><td>91.5</td><td>92.1</td><td>86.3</td><td>94.8</td><td>95.6</td><td>89.4</td><td>95.5</td><td>96.0</td><td>90.3</td><td class="ours"><strong>96.2</strong></td><td class="ours"><strong>96.6</strong></td><td class="ours"><strong>91.5</strong></td></tr>
+              <tr><th scope="row">FSSD-12</th><td>93.6</td><td>96.5</td><td>93.3</td><td>91.9</td><td>95.1</td><td>90.8</td><td>90.2</td><td>94.8</td><td>93.0</td><td>97.9</td><td><strong>99.6</strong></td><td>99.0</td><td>99.1</td><td>99.2</td><td>98.9</td><td>99.2</td><td>99.5</td><td>98.3</td><td class="ours"><strong>99.5</strong></td><td class="ours"><strong>99.6</strong></td><td class="ours"><strong>99.1</strong></td></tr>
+              <tr><th scope="row">MTD</th><td>88.4</td><td>88.9</td><td>86.7</td><td>87.1</td><td>87.4</td><td>89.7</td><td>85.5</td><td>85.6</td><td>87.1</td><td>97.3</td><td>97.7</td><td>97.2</td><td>98.2</td><td>98.5</td><td><strong>97.5</strong></td><td>98.0</td><td>98.2</td><td>96.9</td><td class="ours"><strong>98.4</strong></td><td class="ours"><strong>98.8</strong></td><td class="ours">97.4</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="classification" class="result-section">
+      <div class="section-label">Classification</div>
+      <div class="table-card">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Classification results; scroll horizontally on small screens">
+          <table class="data-table">
+            <caption><span>Table 2.</span> Comparison of Classification Performance on MVTec (Accuracy).</caption>
+            <thead>
+              <tr><th scope="col">Category</th><th scope="col">Crop-Paste</th><th scope="col">DFMGAN</th><th scope="col">AnoDiff</th><th scope="col">DefectDiffu</th><th scope="col">DualAnoDiff</th><th scope="col" class="ours-head">Ours</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">bottle</th><td>52.71</td><td>56.59</td><td><strong>90.70</strong></td><td>78.96</td><td>79.07</td><td class="ours"><u>81.53</u></td></tr>
+              <tr><th scope="row">cable</th><td>32.81</td><td>45.31</td><td>67.19</td><td><u>79.23</u></td><td>78.12</td><td class="ours"><strong>79.45</strong></td></tr>
+              <tr><th scope="row">capsule</th><td>32.89</td><td>37.23</td><td>66.67</td><td><u>72.57</u></td><td>70.67</td><td class="ours"><strong>74.45</strong></td></tr>
+              <tr><th scope="row">carpet</th><td>27.96</td><td>47.31</td><td>58.06</td><td><u>80.98</u></td><td>79.03</td><td class="ours"><strong>82.06</strong></td></tr>
+              <tr><th scope="row">grid</th><td>28.33</td><td>40.83</td><td>42.50</td><td>78.34</td><td><strong>80.00</strong></td><td class="ours"><u>79.57</u></td></tr>
+              <tr><th scope="row">hazelnut</th><td>59.03</td><td>81.94</td><td>85.42</td><td>86.52</td><td><u>89.58</u></td><td class="ours"><strong>90.32</strong></td></tr>
+              <tr><th scope="row">leather</th><td>34.39</td><td>49.73</td><td>61.90</td><td>88.67</td><td><u>90.48</u></td><td class="ours"><strong>91.76</strong></td></tr>
+              <tr><th scope="row">metalnut</th><td>59.89</td><td>64.58</td><td>59.38</td><td>86.75</td><td><u>89.06</u></td><td class="ours"><strong>89.47</strong></td></tr>
+              <tr><th scope="row">pill</th><td>26.74</td><td>29.52</td><td>59.38</td><td><u>60.41</u></td><td>56.25</td><td class="ours"><strong>60.45</strong></td></tr>
+              <tr><th scope="row">screw</th><td>28.81</td><td>37.45</td><td>48.15</td><td>68.94</td><td><strong>70.37</strong></td><td class="ours"><u>69.98</u></td></tr>
+              <tr><th scope="row">tile</th><td>68.42</td><td>74.85</td><td>84.21</td><td>96.46</td><td><strong>100.00</strong></td><td class="ours"><u>99.76</u></td></tr>
+              <tr><th scope="row">transistor</th><td>41.67</td><td>52.38</td><td>60.71</td><td><u>73.45</u></td><td>71.43</td><td class="ours"><strong>74.56</strong></td></tr>
+              <tr><th scope="row">wood</th><td>47.62</td><td>49.21</td><td>71.43</td><td>83.68</td><td><u>85.71</u></td><td class="ours"><strong>86.24</strong></td></tr>
+              <tr><th scope="row">zipper</th><td>26.42</td><td>27.64</td><td>69.51</td><td><u>76.32</u></td><td>75.61</td><td class="ours"><strong>77.20</strong></td></tr>
+              <tr class="average"><th scope="row">Average</th><td>40.55</td><td>49.61</td><td>66.09</td><td>79.38</td><td><u>79.67</u></td><td class="ours"><strong>81.20</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablation" class="result-section">
+      <div class="section-label">Ablation</div>
+      <div class="table-card">
+        <div class="table-scroll" tabindex="0" role="region" aria-label="Loss ablation results; scroll horizontally on small screens">
+          <table class="data-table ablation-table">
+            <caption><span>Table 3.</span> Ablation Study on MVTec of the Proposed Spatially Enhanced Loss (ℒ<sub>spa</sub>) and Mask-Attention Loss (ℒ<sub>m</sub>) on Defect Localization Performance.</caption>
+            <thead>
+              <tr><th rowspan="2" scope="col">Category</th><th colspan="3" scope="colgroup" class="ours-head">Ours</th><th colspan="3" scope="colgroup">w/o ℒ<sub>spa</sub></th><th colspan="3" scope="colgroup">w/o ℒ<sub>m</sub></th></tr>
+              <tr class="metric-row"><th class="ours">AUC</th><th class="ours">AP</th><th class="ours">F1-max</th><th>AUC</th><th>AP</th><th>F1-max</th><th>AUC</th><th>AP</th><th>F1-max</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">bottle</th><td class="ours">99.3</td><td class="ours">93.5</td><td class="ours">87.8</td><td>98.2</td><td>89.3</td><td>84.5</td><td>99.0</td><td>91.3</td><td>86.5</td></tr>
+              <tr><th scope="row">cable</th><td class="ours">97.8</td><td class="ours">83.0</td><td class="ours">79.2</td><td>96.8</td><td>78.5</td><td>75.1</td><td>97.5</td><td>82.1</td><td>77.5</td></tr>
+              <tr><th scope="row">capsule</th><td class="ours">98.5</td><td class="ours">70.3</td><td class="ours">65.5</td><td>96.3</td><td>65.8</td><td>62.3</td><td>95.2</td><td>61.2</td><td>57.5</td></tr>
+              <tr><th scope="row">carpet</th><td class="ours">99.4</td><td class="ours">85.3</td><td class="ours">78.0</td><td>98.1</td><td>81.5</td><td>76.4</td><td>99.1</td><td>84.3</td><td>76.2</td></tr>
+              <tr><th scope="row">grid</th><td class="ours">99.2</td><td class="ours">64.6</td><td class="ours">63.5</td><td>98.3</td><td>61.2</td><td>60.3</td><td>98.9</td><td>62.5</td><td>61.8</td></tr>
+              <tr><th scope="row">hazelnut</th><td class="ours">99.8</td><td class="ours">97.2</td><td class="ours">91.0</td><td>98.5</td><td>93.3</td><td>88.3</td><td>99.3</td><td>95.4</td><td>89.2</td></tr>
+              <tr><th scope="row">leather</th><td class="ours">99.8</td><td class="ours">89.1</td><td class="ours">80.3</td><td>98.6</td><td>84.5</td><td>75.9</td><td>99.5</td><td>87.9</td><td>78.5</td></tr>
+              <tr><th scope="row">metal_nut</th><td class="ours">99.7</td><td class="ours">98.2</td><td class="ours">95.8</td><td>98.2</td><td>94.4</td><td>91.5</td><td>99.4</td><td>97.5</td><td>94.0</td></tr>
+              <tr><th scope="row">pill</th><td class="ours">99.8</td><td class="ours">97.2</td><td class="ours">91.2</td><td>98.5</td><td>93.6</td><td>88.2</td><td>99.4</td><td>96.5</td><td>89.5</td></tr>
+              <tr><th scope="row">screw</th><td class="ours">98.4</td><td class="ours">66.4</td><td class="ours">62.8</td><td>96.4</td><td>62.6</td><td>60.5</td><td>94.8</td><td>58.3</td><td>54.6</td></tr>
+              <tr><th scope="row">tile</th><td class="ours">99.6</td><td class="ours">98.1</td><td class="ours">91.5</td><td>98.9</td><td>94.1</td><td>89.7</td><td>99.3</td><td>96.9</td><td>89.8</td></tr>
+              <tr><th scope="row">toothbrush</th><td class="ours">99.3</td><td class="ours">72.5</td><td class="ours">68.2</td><td>98.6</td><td>68.7</td><td>64.3</td><td>95.7</td><td>65.6</td><td>63.5</td></tr>
+              <tr><th scope="row">transistor</th><td class="ours">98.5</td><td class="ours">87.4</td><td class="ours">80.3</td><td>96.7</td><td>83.2</td><td>77.5</td><td>98.0</td><td>84.8</td><td>78.5</td></tr>
+              <tr><th scope="row">wood</th><td class="ours">99.0</td><td class="ours">90.6</td><td class="ours">83.4</td><td>97.8</td><td>85.9</td><td>80.1</td><td>98.6</td><td>87.4</td><td>81.6</td></tr>
+              <tr><th scope="row">zipper</th><td class="ours">99.5</td><td class="ours">89.2</td><td class="ours">83.1</td><td>97.2</td><td>84.3</td><td>79.5</td><td>99.1</td><td>86.5</td><td>81.2</td></tr>
+              <tr class="average"><th scope="row">Average</th><td class="ours"><strong>99.2</strong></td><td class="ours"><strong>85.5</strong></td><td class="ours"><strong>80.1</strong></td><td>97.8</td><td>81.4</td><td>76.9</td><td>98.2</td><td>82.5</td><td>77.3</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="result-section gallery-section">
+      <div class="section-label">Qualitative results</div>
+      <figure class="figure-card">
+        <div class="figure-crop crop-mvtec">
+          <img src="assets/figure-1-mvtec.png" alt="Generated examples for wood, capsule, transistor, hazelnut, leather, pill, zipper, and tile categories in MVTec" loading="lazy">
+        </div>
+        <figcaption><span>Figure 1.</span> More generated results for various product and defect types in the MVTec dataset. The reference represents a real normal image.</figcaption>
+      </figure>
+      <figure class="figure-card">
+        <div class="figure-crop crop-visa">
+          <img src="assets/figure-2-visa.png" alt="Generated examples for candle, macaroni, PCB, cashew, fryum, and pipe fryum categories in VisA" loading="lazy">
+        </div>
+        <figcaption><span>Figure 2.</span> More generated results for various product and defect types in the VisA dataset.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell">DefectComposer · Selected experimental results</div>
+  </footer>
+</body>
+</html>
