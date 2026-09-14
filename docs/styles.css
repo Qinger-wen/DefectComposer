@@ -157,6 +157,8 @@ u { text-underline-offset: 2px; }
 .crop-mvtec img { width: 136.74%; height: auto; left: -34.08%; top: -17.1%; }
 .crop-visa { aspect-ratio: 3119 / 1312; }
 .crop-visa img { width: 132.09%; height: auto; left: -30.67%; top: -20.35%; }
+.crop-fssd-mtd { aspect-ratio: 1950 / 935; }
+.crop-fssd-mtd img { width: 211.28%; height: auto; left: -49.04%; top: -34.78%; }
 figcaption { border-top: 1px solid var(--line); }
 
 footer {
